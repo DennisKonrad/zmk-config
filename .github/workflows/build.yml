@@ -1,32 +1,5 @@
-name: ZMK Build
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Setup Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.9'
-
-    - name: Install West and dependencies
-      run: |
-        pip install --upgrade pip
-        pip install west
-
-    - name: Initialize West
-      run: west init -l zmk_config && west update
-
-    - name: Build firmware
-      run: |
-        west build -d build/left -b seeeduino_xiao_ble -- -DSHIELD=cosmotyl_left
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main

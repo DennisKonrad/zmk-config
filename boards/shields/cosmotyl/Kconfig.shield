@@ -1,0 +1,8 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_COSMOTYL_LEFT
+    def_bool $(shields_list_contains,cosmotyl_left)
+
+config SHIELD_COSMOTYL_RIGHT
+    def_bool $(shields_list_contains,cosmotyl_right)

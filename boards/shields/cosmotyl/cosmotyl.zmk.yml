@@ -1,0 +1,11 @@
+file_format: "1"
+id: cosmotyl 
+name: Cosmotyl DeKo1 
+type: shield
+url: https://github.com/DennisKonrad/zmk-config
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+siblings:
+  - cosmotyl_left
+  - cosmotyl_right
