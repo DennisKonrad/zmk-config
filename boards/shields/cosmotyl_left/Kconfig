@@ -1,0 +1,5 @@
+config SHIELD_COSMOTYL_LEFT
+    bool "Cosmotyl Left Half"
+    select ZMK_SPLIT
+    help
+        Shield configuration for the left half of my Cosmotyl split keyboard.
