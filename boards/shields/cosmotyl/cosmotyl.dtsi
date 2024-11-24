@@ -3,11 +3,11 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
-#include <dt-bindings/zmk/matrix_transform.h>
 /* Cosmotyl Keyboard Device Tree Source */
 
+#include <dt-bindings/zmk/matrix_transform.h>
 #include "cosmotyl-layout.dtsi"
+
 
 / {
     chosen {
@@ -19,6 +19,7 @@
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "Cosmotyl KScan";
+        diode-direction = "col2row";
         row-gpios = <&gpio0 0 GPIO_ACTIVE_LOW>,  // Reihe 0
                     <&gpio0 1 GPIO_ACTIVE_LOW>,  // Reihe 1
                     <&gpio0 2 GPIO_ACTIVE_LOW>,  // Reihe 2
@@ -29,7 +30,6 @@
                     <&gpio0 7 GPIO_ACTIVE_LOW>,  // Spalte 3
                     <&gpio0 8 GPIO_ACTIVE_LOW>,  // Spalte 4
                     <&gpio0 9 GPIO_ACTIVE_LOW>;  // Spalte 5
-        diode-direction = <KS_CAN_COL2ROW>;
     };
 
     keymap0: keymap {
