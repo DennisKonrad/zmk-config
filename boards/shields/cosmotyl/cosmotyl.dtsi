@@ -1,0 +1,54 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+/* Cosmotyl Keyboard Device Tree Source */
+
+#include "cosmotyl-layout.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &cosmotyl_layout;
+        zmk,keymap = &keymap0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "Cosmotyl KScan";
+        row-gpios = <&gpio0 0 GPIO_ACTIVE_LOW>,  // Reihe 0
+                    <&gpio0 1 GPIO_ACTIVE_LOW>,  // Reihe 1
+                    <&gpio0 2 GPIO_ACTIVE_LOW>,  // Reihe 2
+                    <&gpio0 3 GPIO_ACTIVE_LOW>;  // Reihe 3
+        col-gpios = <&gpio0 4 GPIO_ACTIVE_LOW>,  // Spalte 0
+                    <&gpio0 5 GPIO_ACTIVE_LOW>,  // Spalte 1
+                    <&gpio0 6 GPIO_ACTIVE_LOW>,  // Spalte 2
+                    <&gpio0 7 GPIO_ACTIVE_LOW>,  // Spalte 3
+                    <&gpio0 8 GPIO_ACTIVE_LOW>,  // Spalte 4
+                    <&gpio0 9 GPIO_ACTIVE_LOW>;  // Spalte 5
+        diode-direction = <KS_CAN_COL2ROW>;
+    };
+
+    keymap0: keymap {
+        compatible = "zmk,keymap";
+        label = "Cosmotyl Keymap";
+
+        bindings = <
+            // Spalte 0           Spalte 1           Spalte 2           Spalte 3           Spalte 4           Spalte 5
+            &kp 1                &kp 2              &kp 3              &kp 4              &kp 5              &kp 6        // Reihe 0
+            &kp Q                &kp W              &kp E              &kp R              &kp T              &kp Z        // Reihe 1
+            &kp A                &kp S              &kp D              &kp F              &kp G              &kp H        // Reihe 2
+            &kp LSHIFT           &kp LCTRL          &kp LALT           &kp SPACE          &kp BACKSPACE      &kp ESC      // Reihe 3
+
+            // Daumentasten
+            &none                &none              &none              &kp TAB            &kp SPACE          &kp BACKSPACE
+        >;
+    };
+};
+
+&xiao_i2c { status = "disabled"; };
+&xiao_spi { status = "disabled"; };
+&xiao_serial { status = "disabled"; };
