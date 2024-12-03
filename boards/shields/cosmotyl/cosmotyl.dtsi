@@ -5,6 +5,7 @@
  */
 /* Cosmotyl Keyboard Device Tree Source */
 
+#include <dt-bindings/zmk/matrix_transform.h>
 #include "cosmotyl_layout.dtsi"
 
 &cosmotyl_layout {
