@@ -31,7 +31,7 @@
         >;
     };
 
-    kscan0: kscan {
+    cosmotyl_scan: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
         label = "Cosmotyl KScan";
         diode-direction = "col2row";
