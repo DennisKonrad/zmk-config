@@ -1,3 +1,4 @@
+#include <physical_layouts.dtsi>
 / {
     cosmotyl_layout: cosmotyl_layout {
         compatible = "zmk,physical-layout";
