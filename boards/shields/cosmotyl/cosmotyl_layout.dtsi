@@ -1,5 +1,5 @@
 / {
-    my_keyboard_layout: cosmotyl_layout {
+    cosmotyl_layout: cosmotyl_layout {
         compatible = "zmk,physical-layout";
         display-name = "Cosmotyl";
 
