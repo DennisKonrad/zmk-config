@@ -38,7 +38,7 @@
         row-gpios = <&xiao_d 0 GPIO_ACTIVE_LOW>,  // Reihe 0
                     <&xiao_d 1 GPIO_ACTIVE_LOW>,  // Reihe 1
                     <&xiao_d 2 GPIO_ACTIVE_LOW>,  // Reihe 2
-                    <&xiao_d 3 GPIO_ACTIVE_LOW>;  // Reihe 3
+                    <&xiao_d 3 GPIO_ACTIVE_LOW>,  // Reihe 3
                     <&xiao_d 4 GPIO_ACTIVE_LOW>;  // Reihe 4
         col-gpios = <&xiao_d 5 GPIO_ACTIVE_LOW>,  // Spalte 0
                     <&xiao_d 6 GPIO_ACTIVE_LOW>,  // Spalte 1
